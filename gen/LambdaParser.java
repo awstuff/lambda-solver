@@ -1,4 +1,4 @@
-// Generated from /Users/adrian/Programmieren/Java/lambda-solver/src/lambda.g4 by ANTLR 4.7
+// Generated from /Users/adrian/Programmieren/Java/lambda-solver/src/Lambda.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class lambdaParser extends Parser {
+public class LambdaParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -63,7 +63,7 @@ public class lambdaParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "lambda.g4"; }
+	public String getGrammarFileName() { return "Lambda.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -74,7 +74,7 @@ public class lambdaParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public lambdaParser(TokenStream input) {
+	public LambdaParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -88,11 +88,16 @@ public class lambdaParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_eval; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).enterEval(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).enterEval(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).exitEval(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitEval(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitEval(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -130,11 +135,16 @@ public class lambdaParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_additionExp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).enterAdditionExp(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).enterAdditionExp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).exitAdditionExp(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitAdditionExp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitAdditionExp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -205,11 +215,16 @@ public class lambdaParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_multiplyExp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).enterMultiplyExp(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).enterMultiplyExp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).exitMultiplyExp(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitMultiplyExp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitMultiplyExp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -268,7 +283,7 @@ public class lambdaParser extends Parser {
 	}
 
 	public static class AtomExpContext extends ParserRuleContext {
-		public TerminalNode Number() { return getToken(lambdaParser.Number, 0); }
+		public TerminalNode Number() { return getToken(LambdaParser.Number, 0); }
 		public AdditionExpContext additionExp() {
 			return getRuleContext(AdditionExpContext.class,0);
 		}
@@ -278,11 +293,16 @@ public class lambdaParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_atomExp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).enterAtomExp(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).enterAtomExp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof lambdaListener ) ((lambdaListener)listener).exitAtomExp(this);
+			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitAtomExp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitAtomExp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

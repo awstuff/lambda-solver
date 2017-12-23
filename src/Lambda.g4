@@ -1,4 +1,4 @@
-grammar lambda;
+grammar Lambda;
 
 /* This will be the entry point of our parser. */
 eval

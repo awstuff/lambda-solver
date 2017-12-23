@@ -1,63 +1,63 @@
-// Generated from /Users/adrian/Programmieren/Java/lambda-solver/src/lambda.g4 by ANTLR 4.7
+// Generated from /Users/adrian/Programmieren/Java/lambda-solver/src/Lambda.g4 by ANTLR 4.7
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link lambdaListener},
+ * This class provides an empty implementation of {@link LambdaListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class lambdaBaseListener implements lambdaListener {
+public class LambdaBaseListener implements LambdaListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEval(lambdaParser.EvalContext ctx) { }
+	@Override public void enterEval(LambdaParser.EvalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEval(lambdaParser.EvalContext ctx) { }
+	@Override public void exitEval(LambdaParser.EvalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdditionExp(lambdaParser.AdditionExpContext ctx) { }
+	@Override public void enterAdditionExp(LambdaParser.AdditionExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdditionExp(lambdaParser.AdditionExpContext ctx) { }
+	@Override public void exitAdditionExp(LambdaParser.AdditionExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultiplyExp(lambdaParser.MultiplyExpContext ctx) { }
+	@Override public void enterMultiplyExp(LambdaParser.MultiplyExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultiplyExp(lambdaParser.MultiplyExpContext ctx) { }
+	@Override public void exitMultiplyExp(LambdaParser.MultiplyExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomExp(lambdaParser.AtomExpContext ctx) { }
+	@Override public void enterAtomExp(LambdaParser.AtomExpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomExp(lambdaParser.AtomExpContext ctx) { }
+	@Override public void exitAtomExp(LambdaParser.AtomExpContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
