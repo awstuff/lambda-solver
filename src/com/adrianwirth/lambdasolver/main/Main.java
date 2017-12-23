@@ -8,7 +8,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 public class Main {
 
     public static void main(String[] args) {
-        ANTLRInputStream inputStream = new ANTLRInputStream("(\\x.x)((\\y.a)(xx))");
+        ANTLRInputStream inputStream = new ANTLRInputStream("(\\x.xx)(\\x.xx)");
 
         LambdaLexer lexer = new LambdaLexer(inputStream);
         CommonTokenStream tokenStream = new CommonTokenStream(lexer);

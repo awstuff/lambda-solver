@@ -1,5 +1,8 @@
 package com.adrianwirth.lambdasolver.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Application extends LambdaTerm {
 
     private final LambdaTerm left;
@@ -8,6 +11,14 @@ public class Application extends LambdaTerm {
 
 
     public Application (LambdaTerm left, LambdaTerm right) {
+        if (left == null){
+            throw new IllegalArgumentException("Left term cannot be null");
+        }
+
+        if (right == null){
+            throw new IllegalArgumentException("Right term cannot be null");
+        }
+
         this.left = left;
         this.right = right;
     }
@@ -32,5 +43,18 @@ public class Application extends LambdaTerm {
     @Override
     protected LambdaTerm substitute (Variable variable, LambdaTerm substitution) {
         return new Application(this.left.substitute(variable, substitution), this.right.substitute(variable, substitution));
+    }
+
+
+    @Override
+    protected Set<Variable> getFreeVariables () {
+        if (this.freeVariablesCache != null) {
+            return this.freeVariablesCache;
+        }
+
+        Set<Variable> freeVariables = new HashSet<>(this.left.getFreeVariables());
+        freeVariables.addAll(this.right.getFreeVariables());
+
+        return freeVariables;
     }
 }

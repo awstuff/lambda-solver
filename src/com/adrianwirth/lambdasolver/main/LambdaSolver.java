@@ -7,7 +7,7 @@ public class LambdaSolver {
     private final LambdaTerm lambdaTerm;
 
 
-    public LambdaSolver(LambdaTerm lambdaTerm) {
+    public LambdaSolver (LambdaTerm lambdaTerm) {
         this.lambdaTerm = lambdaTerm;
         System.out.println(lambdaTerm);
     }
