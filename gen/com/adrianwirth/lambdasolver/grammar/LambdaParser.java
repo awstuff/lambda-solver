@@ -1,4 +1,5 @@
 // Generated from /Users/adrian/Programmieren/Java/lambda-solver/src/Lambda.g4 by ANTLR 4.7
+package com.adrianwirth.lambdasolver.grammar;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -94,11 +95,6 @@ public class LambdaParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitEval(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitEval(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final EvalContext eval() throws RecognitionException {
@@ -140,11 +136,6 @@ public class LambdaParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitAdditionExp(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitAdditionExp(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -221,11 +212,6 @@ public class LambdaParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitMultiplyExp(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitMultiplyExp(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final MultiplyExpContext multiplyExp() throws RecognitionException {
@@ -298,11 +284,6 @@ public class LambdaParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof LambdaListener ) ((LambdaListener)listener).exitAtomExp(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof LambdaVisitor ) return ((LambdaVisitor<? extends T>)visitor).visitAtomExp(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 

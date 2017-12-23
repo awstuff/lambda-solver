@@ -1,4 +1,5 @@
 // Generated from /Users/adrian/Programmieren/Java/lambda-solver/src/Lambda.g4 by ANTLR 4.7
+package com.adrianwirth.lambdasolver.grammar;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
