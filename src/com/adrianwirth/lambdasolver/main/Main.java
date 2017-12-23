@@ -1,13 +1,21 @@
 package com.adrianwirth.lambdasolver.main;
 
-import org.antlr.runtime.*;
+import com.adrianwirth.lambdasolver.grammar.LambdaLexer;
+import com.adrianwirth.lambdasolver.grammar.LambdaParser;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
 
 public class Main {
 
     public static void main(String[] args) {
-        ANTLRStringStream inputStream = new ANTLRStringStream("12*(5-6)");
+        ANTLRInputStream inputStream = new ANTLRInputStream("(\\x.x)((\\y.a)(xx))");
 
-        Lambda
+        LambdaLexer lexer = new LambdaLexer(inputStream);
+        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+        LambdaParser parser = new LambdaParser(tokenStream);
+
+        LambdaSolver solver = new LambdaSolver(parser.parse().value);
+        solver.solve();
     }
 
 }

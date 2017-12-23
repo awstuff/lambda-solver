@@ -16,49 +16,49 @@ public class LambdaBaseListener implements LambdaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEval(LambdaParser.EvalContext ctx) { }
+	@Override public void enterParse(LambdaParser.ParseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEval(LambdaParser.EvalContext ctx) { }
+	@Override public void exitParse(LambdaParser.ParseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAdditionExp(LambdaParser.AdditionExpContext ctx) { }
+	@Override public void enterLambdaTerm(LambdaParser.LambdaTermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAdditionExp(LambdaParser.AdditionExpContext ctx) { }
+	@Override public void exitLambdaTerm(LambdaParser.LambdaTermContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultiplyExp(LambdaParser.MultiplyExpContext ctx) { }
+	@Override public void enterAbstraction(LambdaParser.AbstractionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultiplyExp(LambdaParser.MultiplyExpContext ctx) { }
+	@Override public void exitAbstraction(LambdaParser.AbstractionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAtomExp(LambdaParser.AtomExpContext ctx) { }
+	@Override public void enterVariable(LambdaParser.VariableContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAtomExp(LambdaParser.AtomExpContext ctx) { }
+	@Override public void exitVariable(LambdaParser.VariableContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

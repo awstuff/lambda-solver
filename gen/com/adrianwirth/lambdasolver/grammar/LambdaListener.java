@@ -8,43 +8,43 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface LambdaListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link LambdaParser#eval}.
+	 * Enter a parse tree produced by {@link LambdaParser#parse}.
 	 * @param ctx the parse tree
 	 */
-	void enterEval(LambdaParser.EvalContext ctx);
+	void enterParse(LambdaParser.ParseContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LambdaParser#eval}.
+	 * Exit a parse tree produced by {@link LambdaParser#parse}.
 	 * @param ctx the parse tree
 	 */
-	void exitEval(LambdaParser.EvalContext ctx);
+	void exitParse(LambdaParser.ParseContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LambdaParser#additionExp}.
+	 * Enter a parse tree produced by {@link LambdaParser#lambdaTerm}.
 	 * @param ctx the parse tree
 	 */
-	void enterAdditionExp(LambdaParser.AdditionExpContext ctx);
+	void enterLambdaTerm(LambdaParser.LambdaTermContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LambdaParser#additionExp}.
+	 * Exit a parse tree produced by {@link LambdaParser#lambdaTerm}.
 	 * @param ctx the parse tree
 	 */
-	void exitAdditionExp(LambdaParser.AdditionExpContext ctx);
+	void exitLambdaTerm(LambdaParser.LambdaTermContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LambdaParser#multiplyExp}.
+	 * Enter a parse tree produced by {@link LambdaParser#abstraction}.
 	 * @param ctx the parse tree
 	 */
-	void enterMultiplyExp(LambdaParser.MultiplyExpContext ctx);
+	void enterAbstraction(LambdaParser.AbstractionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LambdaParser#multiplyExp}.
+	 * Exit a parse tree produced by {@link LambdaParser#abstraction}.
 	 * @param ctx the parse tree
 	 */
-	void exitMultiplyExp(LambdaParser.MultiplyExpContext ctx);
+	void exitAbstraction(LambdaParser.AbstractionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LambdaParser#atomExp}.
+	 * Enter a parse tree produced by {@link LambdaParser#variable}.
 	 * @param ctx the parse tree
 	 */
-	void enterAtomExp(LambdaParser.AtomExpContext ctx);
+	void enterVariable(LambdaParser.VariableContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link LambdaParser#atomExp}.
+	 * Exit a parse tree produced by {@link LambdaParser#variable}.
 	 * @param ctx the parse tree
 	 */
-	void exitAtomExp(LambdaParser.AtomExpContext ctx);
+	void exitVariable(LambdaParser.VariableContext ctx);
 }

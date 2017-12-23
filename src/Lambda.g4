@@ -1,40 +1,35 @@
 grammar Lambda;
 
-/* This will be the entry point of our parser. */
-eval
-    :    additionExp
+
+parse returns [com.adrianwirth.lambdasolver.model.LambdaTerm value]
+    : lambdaTerm EOF {$value = $lambdaTerm.value;}
     ;
 
-/* Addition and subtraction have the lowest precedence. */
-additionExp
-    :    multiplyExp
-         ( '+' multiplyExp
-         | '-' multiplyExp
-         )*
+lambdaTerm returns [com.adrianwirth.lambdasolver.model.LambdaTerm value]
+    : variable {$value = $variable.value;}
+    | <assoc=left> left=lambdaTerm right=lambdaTerm {$value = new com.adrianwirth.lambdasolver.model.Application($left.value, $right.value);}
+    | abstraction {$value = $abstraction.value;}
+    | OPEN_PAREN lambdaTerm CLOSE_PAREN {$value = $lambdaTerm.value;}
     ;
 
-/* Multiplication and division have a higher precedence. */
-multiplyExp
-    :    atomExp
-         ( '*' atomExp
-         | '/' atomExp
-         )*
+abstraction returns [com.adrianwirth.lambdasolver.model.Abstraction value]
+    : LAMBDA variable DOT lambdaTerm {$value = new com.adrianwirth.lambdasolver.model.Abstraction($variable.value, $lambdaTerm.value);}
     ;
 
-/* An expression atom is the smallest part of an expression: a number. Or
-   when we encounter parenthesis, we're making a recursive call back to the
-   rule 'additionExp'. As you can see, an 'atomExp' has the highest precedence. */
-atomExp
-    :    Number
-    |    '(' additionExp ')'
+
+variable returns [com.adrianwirth.lambdasolver.model.Variable value]
+    : VARIABLE {$value = new com.adrianwirth.lambdasolver.model.Variable($text);}
     ;
 
-/* A number: can be an integer value, or a decimal value */
-Number
-    :    ('0'..'9')+ ('.' ('0'..'9')+)?
-    ;
 
-/* We're going to ignore all white space characters */
-WHITESPACE
-    : (' ' | '\t' | '\r'| '\n') -> skip
-    ;
+LAMBDA : '\\';
+
+DOT : '.';
+
+OPEN_PAREN : '(';
+
+CLOSE_PAREN : ')';
+
+VARIABLE : [a-zA-Z];
+
+WHITESPACE : (' ' | '\t' | '\r'| '\n') -> skip;
