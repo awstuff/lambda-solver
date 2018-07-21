@@ -1,2 +1,2 @@
 # lambda-solver
-A solver for Lambda Calculus Expressions
+An (incomplete) solver for Lambda Calculus Expressions
